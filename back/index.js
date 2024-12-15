@@ -10,7 +10,12 @@ const authRoutes = require("./routes/authRoutes");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*', // or use '*' for development
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true // if you're using cookies/sessions
+}));
 app.use(bodyParser.json());
 
 // Database connection
