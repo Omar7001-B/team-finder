@@ -1,0 +1,49 @@
+### Register a new user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Test User",
+    "email": "tes2t@example.com",
+    "password": "password123",
+    "branch": "Computer Science",
+    "section": "A",
+    "gpa": 3.5,
+    "level": 3
+}
+
+### Login with registered user
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "te2st@example.com",
+    "password": "password123"
+}
+
+### Register another user
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Another User",
+    "email": "another@example.com",
+    "password": "password456",
+    "branch": "Information Technology",
+    "section": "B",
+    "gpa": 3.8,
+    "level": 4
+}
+
+### Test protected route
+GET http://localhost:5000/api/users/profile
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Login with wrong password (should fail)
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@example.com",
+    "password": "wrongpassword"
+} 
