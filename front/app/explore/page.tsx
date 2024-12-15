@@ -19,9 +19,15 @@ interface User {
   section: string
   branch: string
   skills?: string[]
-  requests?: any[]
+  requests?: Request[]
   createdAt: string
   updatedAt: string
+}
+
+interface Request {
+  userId: string
+  status: 'pending' | 'accepted' | 'rejected'
+  timestamp: string
 }
 
 export default function ExplorePage() {
