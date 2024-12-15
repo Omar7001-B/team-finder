@@ -1,0 +1,52 @@
+### Get all users
+GET http://localhost:5000/api/users
+Content-Type: application/json
+
+### Get user by ID (replace ID with an actual user ID)
+GET http://localhost:5000/api/users/675e22b2d1afed9925789085
+Content-Type: application/json
+
+### Create new user
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "name": "Test Student",
+    "email": "test.student@example.com",
+    "password": "password123",
+    "branch": "Computer Science",
+    "section": "A",
+    "gpa": 3.5,
+    "level": 2
+}
+
+### Update user (replace ID with an actual user ID)
+PUT http://localhost:5000/api/users/675e2454fbd2d22a403b88ca
+Content-Type: application/json
+
+{
+    "name": "Updated Student",
+    "email": "updated.student@example.com",
+    "branch": "Information Technology",
+    "section": "B",
+    "gpa": 3.8,
+    "level": 3
+}
+
+### Delete user (replace ID with an actual user ID)
+DELETE http://localhost:5000/api/users/675e2454fbd2d22a403b88ca
+Content-Type: application/json
+
+### Login user
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "john@example.com",
+    "password": "secretpassword123"
+}
+
+### Get protected resource (with JWT)
+GET http://localhost:5000/api/protected
+Content-Type: application/json
+Authorization: Bearer your_jwt_token_here 
