@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:5000/api/auth'
+const API_BASE_URL = 'https://team-finder-back.vercel.app/api/auth'
 
 export async function registerUser(userData: any) {
   const response = await fetch(`${API_BASE_URL}/register`, {
