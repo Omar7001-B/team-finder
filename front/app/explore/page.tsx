@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { endpoints } from '@/src/config/api'
 
 interface User {
   _id: string
@@ -31,7 +32,7 @@ export default function ExplorePage() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/users', {
+        const response = await fetch(endpoints.users.list, {
           headers: {
             'Content-Type': 'application/json',
           },
