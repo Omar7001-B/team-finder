@@ -57,6 +57,11 @@ MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 ```
 
+Create a `.env` file in the frontend directory with the following variable:
+```
+NEXT_PUBLIC_API_URL=your_backend_api_url
+```
+
 ## Project Structure
 
 ```
