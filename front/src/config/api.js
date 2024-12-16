@@ -20,3 +20,8 @@ export const endpoints = {
 };
 
 export { API_URL };
+
+export const metadata = {
+  title: "Team Finder",
+  description: "A simple authentication system",
+};
