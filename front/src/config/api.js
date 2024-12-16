@@ -1,5 +1,9 @@
 export const API_URL =
-   "https://team-finder-back.vercel.app" || "http://localhost:5000";
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
+if (API_URL.endsWith("/")) {
+  API_URL = API_URL.slice(0, -1);
+}
 
 export const endpoints = {
   auth: {
