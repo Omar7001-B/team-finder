@@ -1,7 +1,8 @@
-const API_BASE_URL = 'https://team-finder-back.vercel.app/api/auth'
+// front/lib/api.ts
+import { endpoints } from '../src/config/api'
 
 export async function registerUser(userData: any) {
-  const response = await fetch(`${API_BASE_URL}/register`, {
+  const response = await fetch(endpoints.auth.register, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -18,7 +19,7 @@ export async function registerUser(userData: any) {
 }
 
 export async function loginUser(credentials: { email: string; password: string }) {
-  const response = await fetch(`${API_BASE_URL}/login`, {
+  const response = await fetch(endpoints.auth.login, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -35,7 +36,7 @@ export async function loginUser(credentials: { email: string; password: string }
 }
 
 export async function getUsers(page: number = 1, token: string) {
-  const response = await fetch(`${API_BASE_URL}/users?page=${page}`, {
+  const response = await fetch(`${endpoints.users.list}?page=${page}`, {
     headers: {
       'Authorization': `Bearer ${token}`,
     },
@@ -47,4 +48,3 @@ export async function getUsers(page: number = 1, token: string) {
 
   return response.json()
 }
-
